@@ -29,8 +29,10 @@ fun main(args: Array<String>) {
 }
 fun makeRecipe(){
     println("""
-    Make a recipe 
-    Selected by category, the indredient you´re looking for
+    __________________________________________________________   
+    |Make a recipe                                           |
+    |Selected by category, the indredient you´re looking for |
+    ----------------------------------------------------------
     """.trimIndent())
    // Feature Version width data persistence -> println("First make your categories")
    val categories =
