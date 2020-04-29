@@ -1,3 +1,7 @@
+import Model.Cereal
+import Model.Meat
+import Model.Milk
+import Model.Water
 import kotlin.system.exitProcess
 
 val noValue = {println("Chose a valid option")}
@@ -31,7 +35,7 @@ fun makeRecipe(){
     println("""
     __________________________________________________________   
     |Make a recipe                                           |
-    |Selected by category, the indredient you´re looking for |
+    |Selected by category, the ingredient you´re looking for |
     ----------------------------------------------------------
     """.trimIndent())
    // Feature Version width data persistence -> println("First make your categories")
@@ -56,11 +60,58 @@ fun viewRecipe(catSelect: Int ,categories: Array <String>){
        noValue()
        makeRecipe()
    }else if(catSelect <= categories.size){
-       println(categories[catSelect.dec()])
-   }else{
+
+       when(catSelect){
+            1 -> agua()
+            2 -> leche()
+            3 -> carne()
+            4 -> verduras()
+            5 -> frutas()
+            6 -> cereal()
+            7 -> huevos()
+            8 -> aceites()
+       }
+
+   }
+   else{
        noValue()
        makeRecipe()
    }
+
 }
+fun agua()
+{
+   val water:Water = Water()
+   water.view(water.typo,water.quantity,water.listOfOptions)
+}
+fun leche()
+{
+  val milk:Milk = Milk()
+  milk.view(milk.typo,milk.quantity,milk.listOfOptions)
+}
+fun carne()
+{
+ val meat:Meat = Meat()
+ meat.view(meat.typo,meat.quantity,meat.listOfOptions)
+}
+fun cereal()
+{
+    val cereal:Cereal = Cereal()
+    cereal.view(cereal.typo,cereal.quantity,cereal.listOfOptions)
+}
+fun verduras()
+{
 
+}
+fun frutas()
+{
 
+}
+fun huevos()
+{
+
+}
+fun aceites()
+{
+
+}
